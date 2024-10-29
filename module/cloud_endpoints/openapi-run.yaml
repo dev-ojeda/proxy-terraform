@@ -1,0 +1,55 @@
+swagger: '2.0'
+info:
+  title: proxy-app-demo
+  description: Sample API on Cloud Endpoints with a Cloud Run backend
+  version: 1.0.0
+host: "${HOST}"
+schemes:
+- https
+produces:
+- application/json
+x-google-backend:
+  address: "${ENDPOINT}"
+  protocol: h2
+paths:
+  /:
+    get:
+      summary: "Access"
+      operationId: "access"
+      responses:
+        '200':
+          description: "A successful response"
+          schema:
+            $ref: "#/definitions/successfully"
+        '400':
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/error"
+        '500':
+          description: "Internal Server Error"
+          schema:
+            $ref: "#/definitions/int_error"
+      security:
+      - api_key: []
+definitions:
+  successfully:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+  error:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+  int_error:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+securityDefinitions:
+  # This section configures basic authentication with an API key.
+  api_key:
+    type: "apiKey"
+    name: "key"
+    in: "query"

@@ -1,0 +1,24 @@
+{
+    "terminal.integrated.fontSize": 18,
+    "vs-kubernetes": {
+        "vs-kubernetes.namespace": "",
+        "vs-kubernetes.kubectl-path.linux": "/usr/local/bin/kubectl",
+        "vs-kubernetes.helm-path.linux": "/usr/bin/helm",
+        "vs-kubernetes.minikube-path.linux": "/usr/local/bin/minikube",
+        "vs-kubernetes.kubectlVersioning": "user-provided",
+        "vs-kubernetes.outputFormat": "yaml",
+        "vs-kubernetes.kubeconfig": "/home/neo1sre/.kube/config",
+        "vs-kubernetes.knownKubeconfigs": [],
+        "vs-kubernetes.autoCleanupOnDebugTerminate": false,
+        "vs-kubernetes.nodejs-autodetect-remote-root": true,
+        "vs-kubernetes.nodejs-remote-root": "",
+        "vs-kubernetes.nodejs-debug-port": 9229,
+        "vs-kubernetes.dotnet-vsdbg-path": "~/vsdbg/vsdbg",
+        "vs-kubernetes.local-tunnel-debug-provider": "",
+        "checkForMinikubeUpgrade": true,
+        "imageBuildTool": "Docker",
+        "vs-kubernetes.crd-code-completion": "disabled"
+    },
+    "editor.suggest.preview": true
+
+}
