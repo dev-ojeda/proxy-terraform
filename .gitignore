@@ -7,6 +7,16 @@
 **/environments/development/key*
 **/environments/development/.terraform*
 **/.env*
+# === Archivos de sistema ===
+.DS_Store
+Thumbs.db
+
+# === Logs y temporales ===
+*.log
+*.tmp
+*.bak
+*.swp
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
@@ -33,10 +43,12 @@ override.tf.json
 # !example_override.tf
 
 # Terraform plan files
-**/environments/development/*.plan
-**/environments/development/*.tfplan
-**/environments/development/tfplan.*
-**/environments/development/tfplan-*
+# Terraform plan files
+*.plan
+*.tfplan
+tfplan.*
+tfplan-*
+
 
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
@@ -47,6 +59,7 @@ override.tf.json
 terraform.rc
 
 ### VisualStudioCode ###
+.vscode/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json

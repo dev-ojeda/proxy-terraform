@@ -3,14 +3,26 @@ info:
   title: proxy-app-demo
   description: Sample API on Cloud Endpoints with a Cloud Run backend
   version: 1.0.0
+
+# =============================
+# HOST del servicio expuesto en Cloud Endpoints
+# Reemplazado por templatefile() en Terraform
+# =============================
 host: "${HOST}"
+
 schemes:
-- https
+  - https
 produces:
-- application/json
+  - application/json
+
+# =============================
+# Backend de Cloud Run
+# Reemplazado por templatefile() en Terraform
+# =============================
 x-google-backend:
   address: "${ENDPOINT}"
   protocol: h2
+
 paths:
   /:
     get:
@@ -30,7 +42,8 @@ paths:
           schema:
             $ref: "#/definitions/int_error"
       security:
-      - api_key: []
+        - api_key: []
+
 definitions:
   successfully:
     type: "object"
@@ -47,8 +60,11 @@ definitions:
     properties:
       message:
         type: "string"
+
+# =============================
+# API Key Security
+# =============================
 securityDefinitions:
-  # This section configures basic authentication with an API key.
   api_key:
     type: "apiKey"
     name: "key"
