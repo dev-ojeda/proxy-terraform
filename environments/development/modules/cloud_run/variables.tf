@@ -4,7 +4,6 @@ variable "project_tags" {
     project_number      = string
     region              = string
     environment         = string
-    default_credentials = string
   })
 }
 
@@ -12,10 +11,7 @@ variable "service_tags" {
   type = object({
     service_app_proxy     = string
     service_app_proxy_key = string
-    region                = string
     service_accounts      = string
-    service_host_name     = string
     service_url_name      = string
-    service_url_name_key  = string
   })
 }
