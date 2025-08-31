@@ -13,7 +13,7 @@ provider "google" {
   alias   = "google_mod"
   project = var.project_tags["project_id"]
   region  = var.project_tags["region"]
-  credentials = file(var.project_tags.default_credentials)
+  credentials = file(var.project_tags.credentials_path)
 }
 
 # ----------------------------

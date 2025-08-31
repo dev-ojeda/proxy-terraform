@@ -4,7 +4,7 @@ variable "project_tags" {
     project_number      = string
     region              = string
     environment         = string
-    default_credentials = string
+    credentials_path    = string
   })
 }
 
